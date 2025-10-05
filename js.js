@@ -41,8 +41,8 @@ const users = {
 };
 
 function countProps(obj){
-    const {name, age, hobby} = users
-    return Object.keys({name, age, hobby}).length
+    const {name, age, hoby} = users
+    return Object.keys({name, age, hoby}).length
 }
 
 
@@ -119,3 +119,32 @@ function countTotalSalary(employes) {
 
 
 console.log(countTotalSalary(employes));
+
+
+
+
+// Напиши функцію getAllPropValues(arr, prop), яка отримує масив об'єктів і ім'я властивості. Повертає масив значень певної властивості prop з кожного об'єкта в масиві.
+
+
+const baza = [
+    {name: "Nazar", age: 14},
+    {name: "Ostap", age: 16},
+    {name: "Ira", age: 15}
+]
+
+
+function getAllPropValues(arr, prop){
+const values = [];
+
+for (const obj of arr){
+    const {[prop]: value} = obj;
+    if(value !== undefined){
+        values.push(value)
+    }
+}
+return values
+}
+
+
+console.log(getAllPropValues(baza, "name")); 
+console.log(getAllPropValues(baza, "age")); 
